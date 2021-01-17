@@ -1,0 +1,43 @@
+block variables
+
+- var article_root = [{ name: 'learn asm', url: 'learnasm' }, { category: 'cat1', info: [{ name: 'page a' }, { name: 'cheesemaking' }]}, { category: 'decompilation', info: [{ name: 'c++ from a c perspective', url: 'cppfromc' }, { category: 'subcat', info: [{ name: "page c" }]}]}]
+
+mixin parseTbl(root)
+  // navbtn: all buttons
+  // navsection: sections
+  // TODO: custom css for nested sections
+  each entry in root
+    if entry.category
+      li.navsection.caret= entry.category
+        ul.navlist-nested
+          +parseTbl(entry.info)
+    else
+      li.navbtn
+        if entry.url
+          a(href='/'+entry.url)= entry.name
+        else
+          a= entry.name
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    meta(property="og:title" content="zphos")
+    link(rel="stylesheet", href="/css/style.css")
+    title zphos - #{title}
+
+  body
+    .container
+      .nav
+        ul.navlist
+          li.navbtn
+           a(href='/') home
+          li.navbtn about
+          +parseTbl(article_root)
+      .page
+        block content
+    footer
+      if last_edit
+        p Last changed #{last_edit}
+

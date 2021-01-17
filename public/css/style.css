@@ -1,0 +1,91 @@
+@font-face {
+  font-family: PTMono
+  src: url(fonts/PTMono-Regular.ttf);
+}
+
+
+.top-bar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navcaret::before {
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.nav {
+  margin: 2%;
+  padding-right: 3%;
+  width: auto;
+  float: left;
+  /*
+  background-color #ddd;
+  */
+}
+
+.navlist {
+  overflow: hidden;
+  white-space: auto;
+  padding-left: 0;
+}
+
+.caret {
+  cursor: pointer;
+  user-select: none;
+}
+
+.navbtn, .navsection {
+  list-style-type: none;
+  margin: 0;
+  font-size: 1vw;
+  font-family: sans-serif;
+}
+
+.navlist-nested {
+  padding-left: 2vw;
+}
+
+.navbtn-nested {
+  border-left-style: solid;
+}
+
+.navbtn:hover {
+  background-color: #eee;
+}
+
+body {
+  font-family: 'PTMono', Fallback, sans-serif;
+  font-size: 1vw;
+}
+
+footer {
+  border-top: 1px solid rgba(0,0,0,.1);
+  margin-top: 4em !important;
+  padding-top: 1em;
+  text-align: center;
+  font-size: 1vw;
+  color: #aaa;
+  margin-top: 1em;
+}
+
+pre {    
+    background-color: #eee;
+    border: solid;
+    border-color: #eee;
+    border-radius: 2px;
+}
+
+.page {
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 1%;
+  overflow-wrap: break-word;
+}
+
+.container {
+  padding-top: 2em;
+  overflow: auto;
+}
